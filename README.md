@@ -1,7 +1,8 @@
 # XOVATION Stories Wordpress site
 
-1. Clone this project
-2. Install wordpress into /public
-3. Set up /public/wp-config.php
-4. Activate the supplied plugins
-5. Activate the STORIES theme
+1. Clone into an empty directory
+2. Run 'bundle' from CLI
+3. Install wordpress into /public
+4. Set up /public/wp-config.php
+5. Activate the supplied plugins
+6. Activate the STORIES theme
