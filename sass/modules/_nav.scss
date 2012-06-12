@@ -1,0 +1,65 @@
+
+@mixin vertical-nav {
+  @include unstyled-list;
+  margin: 2 * $typographic-v-margin auto;
+  a {
+    @include unstyled-link;
+  }
+
+  .menu {
+    font: bold $large-font-size $cursive-font-family;
+    text-align: center;
+    .menu-item {
+      a {
+        @include box;
+        @include single-transition(background-color);
+        display: block;
+        margin: 0;
+        &:focus,
+        &:hover {
+          background-color: #a0c544;
+        }
+      }
+      &:nth-child(1) {
+        @include rotate(1deg);
+        a:focus,
+        a:hover,
+        &.current-menu-item a {
+          background-color: #aa70aa;
+        }
+      }
+      &:nth-child(2) {
+        @include rotate(-.5deg);
+        a:focus,
+        a:hover,
+        &.current-menu-item a {
+          background-color: #fff031;
+        }
+      }
+      &:nth-child(3) {
+        @include rotate(.5deg);
+        a:focus,
+        a:hover,
+        &.current-menu-item a {
+          background-color: #f7ab38;
+        }
+      }
+      &:nth-child(4) {
+        @include rotate(-1deg);
+        a:focus,
+        a:hover,
+        &.current-menu-item a {
+          background-color: #e977a1;
+        }
+      }
+      &:nth-child(5) {
+        @include rotate(.5deg);
+        a:focus,
+        a:hover,
+        &.current-menu-item a {
+          background-color: #4bb895;
+        }
+      }
+    }
+  }
+}

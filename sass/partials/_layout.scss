@@ -1,0 +1,125 @@
+/*
+ * GENERAL
+ */
+body {
+  background: $body-bg-color image-url('bgpat4.png') fixed;
+  color: $text-color;
+  font: #{$base-font-size}/#{$base-line-height} $base-font-family;
+}
+
+a {
+  @include hover-link;
+  @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color);
+}
+
+img {
+  @include border-radius;
+}
+
+.assistive-text {
+  @include hidden;
+}
+
+#container {
+  @include clearfix;
+  margin: .5 * $typographic-v-margin auto;
+  padding: .5 * $typographic-v-margin $typographic-h-margin;
+  width: 740px;
+}
+
+/*
+ * HEADER
+ */
+#header {
+  @include clearfix;
+  position: relative;
+  z-index: 90;
+}
+#nav-primary {
+  @include vertical-nav;
+  width: (2 * image-width('xovation-logo.png')) + (2 * $typographic-h-margin);
+  float: left;
+  .menu-item {
+    width: image-width('xovation-logo.png');
+    float: left;
+    margin: (.5 * $typographic-v-margin) (.25 * $typographic-h-margin);
+  }
+}
+#site-title {
+  @include replace-linked-text('xovation-logo.png', true);
+  float: right;
+}
+// Move the header to the right when viewport is wide enough
+@media only screen and (min-width: 1382px) {
+  #header {
+    position: fixed;
+    top: 3 * $typographic-v-margin;
+    left: 50%;
+    margin-left: 410px;
+    width: 200px;
+  }
+  #nav-primary {
+    width: image-width('xovation-logo.png');
+  }
+}
+// Retina logo
+@media only screen and (min-width: 1382px) {
+  @include replace-linked-text('xovation-logo-2x.png', true, true);
+}
+
+/*
+ * MAIN
+ */
+#main {
+  @include clearfix;
+  margin: $typographic-v-margin auto;
+  position: relative;
+  z-index: 100;
+  .hentry {
+    @include hentry;
+  }
+  .fragment {
+    @include fragment;
+  }
+  .hentry p, .fragment-title a {
+    max-width: 520px;
+    margin: .5 * $typographic-v-margin auto;
+    padding: 0 $typographic-h-margin;
+  }
+}
+
+/*
+ * FOOTER
+ */
+#footer {
+  @include box;
+  margin: 2 * $typographic-v-margin auto;
+}
+
+/*
+ * DECOR
+ */
+#vimplar {
+  @include replace-text-with-dimensions('vimplar.png');
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 50;
+}
+#boll {
+  @include replace-text-with-dimensions('boll.png');
+  position: fixed;
+  top: 0; left: 5%;
+  z-index: 40;
+}
+#boll2 {
+  @include replace-text-with-dimensions('boll2.png');
+  position: fixed;
+  top: 0; left: 8%;
+  z-index: 30;
+}
+#agg {
+  @include replace-text-with-dimensions('agg.png');
+  position: fixed;
+  top: 0; left: 14%;
+  z-index: 20;
+}

@@ -1,0 +1,80 @@
+@mixin hentry {
+  @include box;
+  .entry-meta {
+    color: $mute-color;
+    padding: 0 .5 * $typographic-h-margin;
+    a {
+      @include unstyled-link;
+    }
+    .taxonomy-list {
+      @include inline-list;
+    }
+  }
+  .entry-header {
+    //background: image-url('tape1.png') bottom center no-repeat;
+    padding: $typographic-v-margin $typographic-h-margin; //image-height('tape1.png') $typographic-h-margin;
+    a {
+      @include unstyled-link;
+      &:focus,
+      &:hover {
+        .entry-title {
+          color: $link-color;
+        }
+      }
+    }
+    .entry-title {
+      @include single-transition(color);
+      color: $strong-color;
+      font: bold #{$xlarge-font-size}/#{$tight-line-height} $cursive-font-family;
+      margin-bottom: .5 * $typographic-v-margin;
+    }
+    .entry-excerpt {
+      font: bold #{$large-font-size}/#{$tight-line-height} $cursive-font-family;
+      margin-bottom: .5 * $typographic-v-margin;
+    }
+  }
+  .entry-thumbnail {
+    @include thumbnail;
+    background: image-url('tape2.png') bottom center no-repeat;
+    padding: $typographic-v-margin $typographic-h-margin (10px + image-height('tape2.png')) $typographic-h-margin;
+    margin-bottom: .5 * $typographic-v-margin;
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .entry-content {
+    margin-bottom: .5 * $typographic-v-margin;
+    padding: .5 * $typographic-v-margin 0;
+  }
+
+  // Home page overrides
+  body.home & {
+    float: left;
+    margin: .5 * $typographic-v-margin 10px;
+    width: 225px;
+    .entry-header {
+      padding: .5 * $typographic-v-margin .5 * $typographic-h-margin;
+      .entry-title {
+        font: bold #{$large-font-size}/#{$tight-line-height} $cursive-font-family;
+      }
+    }
+    .entry-thumbnail {
+      padding: 0 .5 * $typographic-h-margin;
+    }
+    .entry-content {
+      font: #{$small-font-size}/#{$tight-line-height} $ui-font-family;
+    }
+    // Sticky (featured) posts
+    &.sticky {
+      width: 450px;
+      .entry-header {
+        .entry-title {
+          font: bold #{$xlarge-font-size}/#{$tight-line-height} $cursive-font-family;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@mixin thumbnail {
+  figcaption {
+    @include border-bottom-radius;
+    border: 1px solid $line-color;
+    border-top: none;
+    padding: .25 * $typographic-v-margin .5 * $typographic-h-margin;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .sep {
+      color: $mute-color;
+      font-size: $small-font-size;
+      margin: 0 .5 * $typographic-h-margin;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+
+/*!
+ * Theme Name: XOVATION Stories
+ * Author: Fredrik Broman
+ * Author URI: http://syn-ack.se/
+ * Description: Custom theme for the XOVATION Stories project
+ */
+
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+// Compass framework
+@import "compass";
+
+// Basic setup
+@import "partials/base";
+@import "partials/utils";
+
+// Normalize
+@import "partials/normalize";
+
+// Modules
+@import "modules/hentry";
+@import "modules/fragment";
+@import "modules/thumbnail";
+@import "modules/widget";
+@import "modules/box";
+@import "modules/nav";
+
+// Main styles
+@import "partials/wordpress";
+@import "partials/layout";

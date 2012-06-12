@@ -1,0 +1,8 @@
+@mixin widget {
+  margin-bottom: $typographic-v-margin;
+  .widget-title {
+    color: $strong-color;
+    font-size: $large-font-size;
+    font-weight: bold;
+  }
+}

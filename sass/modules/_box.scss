@@ -1,0 +1,6 @@
+@mixin box {
+  @include border-radius;
+  @include single-box-shadow;
+  background-color: $bg-color;
+  margin-bottom: $typographic-v-margin;
+}

@@ -1,0 +1,84 @@
+
+/* Linked image replacement (i.e. <h1><a href="#">Title</a></h1>) */
+@mixin replace-linked-text( $_url, $_with-dimensions: true, $_2x: false ) {
+  @if ( $_url ) {
+    // Extend Compass
+    @if ( $_with-dimensions ) {
+      @include replace-text-with-dimensions( $_url );
+    }
+    @else {
+      @include replace-text( $_url );
+    }
+    @if ( $_2x ) {
+      @include background-size( 100% auto );
+      height: .5 * image-height( $_url );
+      width: .5 * image-width( $_url );
+    }
+    a {
+      display: block;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+/* Unstyled lists */
+@mixin unstyled-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Inline list */
+@mixin inline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline;
+    &:after {
+      content: ', ';
+    }
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+  }
+}
+.inline-list { @include inline-list; };
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+@mixin hidden {
+  display: none !important;
+  visibility: hidden;
+}
+.hidden { @include hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+  &.focusable:active, &.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+.visuallyhidden { @include visuallyhidden; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+@mixin invisible {
+  visibility: hidden;
+}
+.invisible { @include invisible; }

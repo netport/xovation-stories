@@ -1,0 +1,14 @@
+@mixin fragment {
+  background: image-url('tape3.png') bottom center no-repeat;
+  padding-bottom: image-height('tape3.png');
+  .fragment-title {
+    background: image-url('tape2.png') top center no-repeat;
+    padding-top: .5 * image-height('tape2.png');
+    font: bold $large-font-size $cursive-font-family;
+    a {
+      @include unstyled-link;
+      @include hover-link;
+      display: block;
+    }
+  }
+}
