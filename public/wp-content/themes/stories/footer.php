@@ -10,7 +10,7 @@
 ?>
 
   <footer id="footer" role="contentinfo">
-    <p>Nullam quis risus eget urna mollis ornare vel eu leo &middot; <a href="#">mail@domain.com</a> &middot; +46 123&ndash;456 789</p>
+    <p>Besök <a href="http://www.xovation.se">xovation.se</a> för mer information om projektet och för att läsa vår projektblogg.</p>
   </footer><!-- #footer -->
 
 </div><!-- #container -->
