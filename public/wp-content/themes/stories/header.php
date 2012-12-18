@@ -64,5 +64,5 @@
       <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => '1' ) ); ?>
     </nav><!-- #nav-primary -->
-    <img src="http://www.x-ovation.se/wp-content/uploads/2012/03/EU_vanster_RGB.jpg" style="width:100%;height:auto;margin-top:2em;">
+    <img src="http://www.x-ovation.se/wp-content/uploads/2012/03/EU_vanster_RGB.jpg" style="box-sizing:border-box;display:block;width:100%;max-width:240px;height:auto;margin-top:4em;border:1px solid #ddd;background:#fff;padding:.5em;">
   </header><!-- #header -->
